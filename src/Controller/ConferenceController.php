@@ -55,11 +55,17 @@ class ConferenceController extends AbstractController
         EOF);
     }*/
 
-    #[Route('/hello/{name}', name: 'conference')]
+    /*#[Route('/hello/{name}', name: 'conference')]
     public function index($name): Response
     {
         return $this->render('conference/index.html.twig', [
             'name' => $name,
         ]);
+    }*/
+
+    #[Route('/', name: 'homepage')]
+    public function index(): Response
+    {
+        return $this->render('conference/index.html.twig');
     }
 }
