@@ -68,6 +68,8 @@ class ConferenceController extends AbstractController
                 'permalink' => $request->getUri(),
             ];
 
+            $this->bus->dispatch(new CommentMessage($comment->getId(), $context));
+
             return $this->redirectToRoute('conference', ['slug' => $conference->getSlug()]);
         }
         

@@ -30,6 +30,9 @@ services:
     image: redis:7-alpine
     ports: [6379]
     restart: always
+  mailer:
+    image: schickling/mailcatcher
+    ports: [1025, 1080]
 ###< doctrine/doctrine-bundle ###
 
 volumes:
